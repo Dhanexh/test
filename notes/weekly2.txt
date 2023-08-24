@@ -1,0 +1,143 @@
+Number of Students Doing Homework at a Given Time:
+
+public static int countstudents(int[] arr, int[] arr2,int querytime){
+        int count = 0;
+        for(int i=0; i<arr.length; i++){
+            if(querytime >= arr[i] && querytime <= arr2[i])
+                count ++;
+        }
+        return count;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        
+        int[] arr = new int[n];
+        for(int i=0; i<n; i++){
+            arr[i] = sc.nextInt();
+        }
+        
+        int[] arr2 = new int[n];
+        for(int i=0; i<n; i++){
+            arr2[i] = sc.nextInt();
+        }
+        int querytime = sc.nextInt();
+        
+        System.out.println(countstudents(arr,arr2,querytime));
+    }
+
+------------------------------------------------------------------------------------------------------------------------
+Find Greatest Common Divisor of Array 1:
+
+public static int findGCD(int[] nums) {
+        int minNum = Integer.MAX_VALUE;
+        int maxNum = Integer.MIN_VALUE;
+        for (int num : nums) {
+            minNum = Math.min(minNum, num);
+            maxNum = Math.max(maxNum, num);
+        }
+        return findGCD(minNum, maxNum);
+    }
+
+    public static int findGCD(int a, int b) {
+        if (b == 0) {
+            return a;
+        }
+        return findGCD(b, a % b);
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        
+        int[] nums = new int[n];
+        for(int i=0; i<n; i++){
+            nums[i] = sc.nextInt();
+        }
+        int gcd = findGCD(nums);
+        System.out.println(gcd);
+    }
+
+
+---------------------------------------------------------------------------------------------------------------------
+Concatenation of Array 3:
+
+public static int[] concatArrays(int[] nums) {
+        int n = nums.length;
+        int[] ans = new int[2 * n];
+        for (int i = 0; i < n; i++) {
+            ans[i] = nums[i];
+            ans[i + n] = nums[i];
+        }
+        return ans;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        
+        int[] nums = new int[n];
+        for(int i=0; i<n; i++){
+            nums[i] = sc.nextInt();
+        }
+        int[] ans = concatArrays(nums);
+        System.out.println(Arrays.toString(ans));
+    }
+
+---------------------------------------------------------------------------------------------------------------------
+is array sorted:
+
+public static boolean isSorted(int[] arr) {
+        int n = arr.length;
+        for (int i = 1; i < n; i++) {
+            if (arr[i] < arr[i - 1]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+        for(int i=0; i<n; i++){
+            arr[i] = sc.nextInt();
+        }
+        boolean sorted = isSorted(arr);
+        if(sorted == true)
+            System.out.println("True");
+        else
+            System.out.println("False");
+    }
+
+-----------------------------------------------------------------------------------------------------------------------
+Triple occurance:
+
+public static boolean tripleOccurance(int[] arr){
+        for(int i=0; i<arr.length; i++){
+            int count = 0;
+            for(int j=0; j<arr.length; j++){
+                if(arr[i] == arr[j])
+                    count++;
+            }
+            if(count==3) return true;
+        }
+        return false;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        
+        int[] arr = new int[n];
+        for(int i=0; i<n; i++)
+            arr[i] = sc.nextInt();
+        
+        boolean check = tripleOccurance(arr);
+        if(check==true)
+            System.out.println("True");
+        else
+            System.out.println("false");
+    }

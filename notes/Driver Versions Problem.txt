@@ -1,0 +1,9 @@
+Bluetooth:
+Bluetooth device - 10.0.19041.1
+Microsoft bluetooth enumerator - 10.0.19041.1889
+Microsoft bluetooth LE enumerator - 10.0.19041.488
+Qualcomm Atheros QCA9377 Bluetooth - 10.0.0.827
+
+AMD Radeon (TM) R4 Graphics - 25.20.14020.9001
+
+Touch 
